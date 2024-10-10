@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    background: #EACEA7;
+}
+
+header{
+    text-align: right;
+    background-color: #37342D;
+    padding: 2rem;
+    text-align: center;
+}
+
+header a{
+    color: #F9AC54; /*#e4640e, #DD5746, 8B322C*/
+    margin: 1rem;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1{
+    color: #F88E16;
+    padding: 5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title{
+    margin-left: -40rem;
+    margin-top: 8.5rem;
+}
+
+.title h1{
+    color: #F88E16;
+    font-size: 96px;
+}
+.title .name{
+    position: static;
+    margin-top: -9rem;
+    margin-left: 13.8rem;
+}
+
+
+.body{
+    text-align: center;
+}
+
+.pic{
+    width: 250px;
+}
+
+.wrapper{
+   position: static;
+   margin-top: -30rem;
+   margin-left: 40rem;
+}
+.wrapper p{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: static;
+    margin-top: -12rem;
+    margin-left: -72rem;
+    color: #37342D;
+}
+
+.me{
+    width: 600px;
+}
+.about img{
+    width: 650px;
+    position: absolute;
+    margin-left: 7rem;
+    margin-top: 5rem;
+
+}
+.about h2{
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #F88E16;
+    position: absolute;
+    margin-top: 15rem;
+    margin-left: 50rem;
+}
+.about span{
+    color: #F88E16;
+    font-weight: bold;
+}
+.about p{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    color: #37342D;
+    font-size: 25px;
+    margin-top: 22rem;
+    margin-left: 50rem;
+}   
+.art{
+    width: 350px;
+    border-radius: 15%;
+}
+.hbs{
+    font-size: 60px;
+    text-align: center;
+}
+.hbs span{
+    color: #37342D;
+}
+.hobbies{
+    margin-top: 25px;
+    margin-left: 6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+}
+.hobbies .wrapper{
+    width: 350px;
+    margin-top: 2rem;
+    margin-left: 10px;
+    border: 3px solid  #F88E16;
+    border-radius: 15%;
+
+}
+

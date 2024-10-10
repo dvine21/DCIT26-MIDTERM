@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="body">
+    <div class="title">
+        <h1>Hello,</h1>
+        <h1 class="name">I'm Divine!</h1>
+    </div>
+    <div class="wrapper">
+    <img class= "me" src="{% static 'images/me.png' %}">
+    <p>Bachelor of Science in Information<br>
+        Technology(BSIT) Student</p>
+    </div>
+</section>    
+{% endblock content %}    
