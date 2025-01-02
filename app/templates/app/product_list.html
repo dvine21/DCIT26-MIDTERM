@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    <a href="{% url 'product_create' %}" class="upld">+ Upload New Item</a>
+    {% for product in products %}
+        <div class="post-entry">
+            <div class="product-grid">
+                <div class="product-card">
+            <h2><a href="{% url 'product_detail' product.pk %}">{{product.ItemName}}</a> </h2>
+            <p>₱{{product.Price}}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

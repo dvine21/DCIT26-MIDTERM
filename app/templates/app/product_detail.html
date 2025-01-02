@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+        <div class="post-entry">
+            <div class="product">
+                <div class="product-card">
+                    <div class="crd">
+                <h2><a href="">{{product.ItemName}}</a> </h2>
+            <p>₱{{product.Price}}</p>
+            <p>Stock: {{product.Stock}}</p>
+            <p>Description: {{product.Description}}</p>
+                    <div class="edit">
+                    <a href="{% url 'product_update' product.pk %}"><button>Edit Item</button></a>
+                    <a href="{% url 'product_delete' product.pk %}"><button>Delete Item</button></a>
+                    </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock content %}
