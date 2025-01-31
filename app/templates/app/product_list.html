@@ -1,15 +1,67 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block content %}
-    <a href="{% url 'product_create' %}" class="upld">+ Upload New Item</a>
-    {% for product in products %}
-        <div class="post-entry">
-            <div class="product-grid">
-                <div class="product-card">
-            <h2><a href="{% url 'product_detail' product.pk %}">{{product.ItemName}}</a> </h2>
-            <p>₱{{product.Price}}</p>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
+<div class="container">
+
+    <h2>Product List</h2>
+
+    <form method="get" action="">
+        <input type="text" name="q" placeholder="Search product..." value="{{ request.GET.q }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Orders</th>
+                <th>View</th>
+                <th>Update</th>
+                <th>Delete</th>          
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.ItemName }}</td>
+                <td>{{ product.description }}</td>
+                <td>₱{{ product.price }}</td>
+                <td>{{ product.stock }}</td>
+                <td>
+                    {% for order_item in product.orderitem_set.all %}
+                        Order #{{ order_item.order.id }} ({{ order_item.quantity }} pcs)<br>
+                    {% empty %}
+                        No Orders
+                    {% endfor %}
+                </td>
+                <td><a href="{% url 'product_detail' product.id %}">View</a></td>
+                <td><a href="{% url 'product_update' product.id %}">Edit</a></td>
+                <td><a href="{% url 'product_delete' product.id %}" onclick="return confirm('Are you sure?')">Delete</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8">No products found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <td><h4>Total</h4></td>
+            <td colspan="2">{{ total_products }}</td>
+            <td>{{ total_stock }}</td>
+            <td>{{ total_sold }}</td>
+            <td colspan="3"><a href="{% url 'product_create' %}">+ Add New Item</a></td>
+        </tfoot>
+    </table>
+
+    <div class="logout-section">
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit" class="btn-logout">Log Out</button>
+        </form>
+    </div>
+</div>
+
 {% endblock content %}

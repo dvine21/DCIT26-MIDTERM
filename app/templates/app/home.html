@@ -2,10 +2,60 @@
 {% load static %}
 
 {% block content %}
-<section class="home">
-    <div class="hme">
-        {% csrf_token %}
-        <p>Welcome, {{user.username}}!</p>
+
+<div class="profile-container">
+    {% csrf_token %}
+    <h3>Welcome to <span>Thrift Society</span> {{user.username}}! 
+        Sustainable fashion meets smart shopping discover unique,
+        pre-loved treasures and give them a new home. Shop thrift, shop smart!</h3>
+</div>
+<div class="product-container">
+    <div class="product-wrapper">
+        <h2 class="product-title">Uniqlo</h2>
+        <p class="product-description">T-Shirt</p>
+        <p class="product-price">₱120</p>
+        <button class="add-to-cart">Add to Cart</button>
     </div>
-</section>    
+    <div class="product-wrapper">
+        <h2 class="product-title">Nike</h2>
+        <p class="product-description">T-Shirt</p>
+        <p class="product-price">₱500</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-wrapper">
+        <h2 class="product-title">Puma</h2>
+        <p class="product-description">T-Shirt</p>
+        <p class="product-price">₱250</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-wrapper">
+        <h2 class="product-title">ZARA</h2>
+        <p class="product-description">T-Shirt</p>
+        <p class="product-price">₱120</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-wrapper">
+        <h2 class="product-title">H&M</h2>
+        <p class="product-description">T-Shirt</p>
+        <p class="product-price">₱100</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-wrapper">
+        <h2 class="product-title">Bench</h2>
+        <p class="product-description">T-Shirt</p>
+        <p class="product-price">₱200</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-wrapper">
+        <h2 class="product-title">Penshop</h2>
+        <p class="product-description">T-Shirt</p>
+        <p class="product-price">₱110</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product-wrapper">
+        <h2 class="product-title">Tribal</h2>
+        <p class="product-description">T-Shirt</p>
+        <p class="product-price">₱220</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
 {% endblock content %}
